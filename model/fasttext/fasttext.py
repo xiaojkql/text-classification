@@ -77,6 +77,7 @@ class FastText(object):
                 # (b,s,e) --> (b,e) / (length) -->
                 output = tf.math.reduce_sum(self.word_embedding, axis=1)
                 self.context_vector = output/input_length
+                print(self.context_vector.shape)
             with tf.variable_scope('full-hidden-layer'):
                 output = tf.layers.dense(inputs=self.context_vector,
                                          units=model_config.full_hidden_size,
@@ -92,3 +93,15 @@ class FastText(object):
 
     def get_pooled_output(self):
         return self.output
+
+
+def test():
+    input_ids = [[1, 2, 3, 4],
+                 [0, 1, 2, 3]]
+    input_length = [2, 3]
+    config = FastTextConfig()
+    model = FastText(config, True, input_ids, input_length)
+
+
+if __name__ == "__main__":
+    test()
