@@ -1,0 +1,15 @@
+{
+    "vocab_size": 679250,
+    "embedding_size": 300,
+    "use_pretrained_embedding": "/home/qinyuan/MyProject/classification/embedding/vector/vector_in_word.txt",
+    "vocab_word_id_map": "/home/qinyuan/MyProject/classification/dataset/map/word_map.txt",
+    "attention_sizes": [
+        100
+    ],
+    "atten_hidden_sizes": [
+        100
+    ],
+    "num_attention_vectors": 5,
+    "full_layers_size": [100],
+    "dropout_prob": 0.5
+}
